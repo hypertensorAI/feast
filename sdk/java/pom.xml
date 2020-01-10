@@ -11,7 +11,7 @@
   <parent>
     <groupId>dev.feast</groupId>
     <artifactId>feast-parent</artifactId>
-    <version>0.3.6-SNAPSHOT</version>
+    <version>${revision}</version>
     <relativePath>../..</relativePath>
   </parent>
 
@@ -21,6 +21,12 @@
   </properties>
 
   <dependencies>
+    <dependency>
+      <groupId>dev.feast</groupId>
+      <artifactId>datatypes-java</artifactId>
+      <version>${project.version}</version>
+    </dependency>
+
     <!-- GRPC and Protobuf -->
     <dependency>
       <groupId>io.grpc</groupId>
@@ -79,10 +85,6 @@
 
   <build>
     <plugins>
-      <plugin>
-        <groupId>org.xolstice.maven.plugins</groupId>
-        <artifactId>protobuf-maven-plugin</artifactId>
-      </plugin>
       <!-- Javadoc -->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
